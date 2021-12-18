@@ -46,15 +46,33 @@ return [
     */
     'accounts' => [
 
+        // 'default' => [// account identifier
+        //     'host'  => env('IMAP_HOST', 'localhost'),
+        //     'port'  => env('IMAP_PORT', 993),
+        //     'protocol'  => env('IMAP_PROTOCOL', 'imap'), //might also use imap, [pop3 or nntp (untested)]
+        //     'encryption'    => env('IMAP_ENCRYPTION', 'tls'), // Supported: false, 'ssl', 'tls', 'notls', 'starttls'
+        //     //'validate_cert' => env('IMAP_VALIDATE_CERT', true),
+        //     'validate_cert' => false,
+        //     'username' => env('IMAP_USERNAME', 'ord0077@gmail.com'),
+        //     'password' => env('IMAP_PASSWORD', 'orange!@#'),
+        //     'authentication' => env('IMAP_AUTHENTICATION', null),
+        //     'proxy' => [
+        //         'socket' => null,
+        //         'request_fulluri' => false,
+        //         'username' => null,
+        //         'password' => null,
+        //     ]
+        // ],
+
         'default' => [// account identifier
-            'host'  => env('IMAP_HOST', 'localhost'),
+            'host'  => env('IMAP_HOST', 'imap.gmail.com'),
             'port'  => env('IMAP_PORT', 993),
             'protocol'  => env('IMAP_PROTOCOL', 'imap'), //might also use imap, [pop3 or nntp (untested)]
             'encryption'    => env('IMAP_ENCRYPTION', 'ssl'), // Supported: false, 'ssl', 'tls', 'notls', 'starttls'
-            //'validate_cert' => env('IMAP_VALIDATE_CERT', true),
+            // 'validate_cert' => env('IMAP_VALIDATE_CERT', false),
             'validate_cert' => false,
-            'username' => env('IMAP_USERNAME', 'cadmanedwards1000@gmail.com'),
-            'password' => env('IMAP_PASSWORD', '1@Ab56ab56'),
+            'username' => env('IMAP_USERNAME', 'ord0077@gmail.com'),
+            'password' => env('IMAP_PASSWORD', 'orange!@#'),
             'authentication' => env('IMAP_AUTHENTICATION', null),
             'proxy' => [
                 'socket' => null,

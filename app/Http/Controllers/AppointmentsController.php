@@ -22,21 +22,21 @@ class AppointmentsController extends Controller
 		
 		$folder = $client->getFolderByName('INBOX');
 		$messages = $folder->messages()->unseen()->get();
-		
+
 		// dd($client);
 		
 		$email_data = [];
 
 		foreach($messages as $message){	
 			if($message->hasAttachments()){
-				// foreach ($message->getAttachments() as $attachment) {
-					// $status = $attachment->save($path = public_path () . "/email_attachments/", $filename = null);
-					// dump($status);
-                // }
-				$aAttachment = $message->getAttachments();
-				$aAttachment->each(function ($oAttachment) {
-					$oAttachment->save($path = public_path () . "/email_attachments/", $filename = null);
-				});
+				foreach ($message->getAttachments() as $attachment) {
+					$status = $attachment->save($path = public_path () . "/email_attachments/", $filename = null);
+					dump($status);
+                }
+				// $aAttachment = $message->getAttachments();
+				// $aAttachment->each(function ($oAttachment) {
+				// 	$oAttachment->save($path = public_path () . "/email_attachments/", $filename = null);
+				// });
 		}
 			//Move the current Message to 'INBOX.read'
 			// if($message->move('INBOX.read') == true){

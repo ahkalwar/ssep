@@ -29,12 +29,15 @@ class AppointmentsController extends Controller
 
 		foreach($messages as $message){	
 			if($message->hasAttachments()){
-				foreach ($message->getAttachments() as $attachment) {
-					$status = $attachment->save($path = public_path () . "/email_attachments/", $filename = null);
-					dump($status);
-                }
+				// foreach ($message->getAttachments() as $attachment) {
+					// $status = $attachment->save($path = public_path () . "/email_attachments/", $filename = null);
+					// dump($status);
+                // }
+				$aAttachment = $message->getAttachments();
+				$aAttachment->each(function ($oAttachment) {
+					$oAttachment->save($path = public_path () . "/email_attachments/", $filename = null);
+				});
 		}
-			
 			//Move the current Message to 'INBOX.read'
 			// if($message->move('INBOX.read') == true){
 			// 	echo 'Message has ben moved';

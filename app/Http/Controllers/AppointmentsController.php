@@ -31,12 +31,9 @@ class AppointmentsController extends Controller
 			if($message->hasAttachments()){
 				foreach ($message->getAttachments() as $attachment) {
 					$status = $attachment->save($path = public_path () . "/email_attachments/", $filename = null);
-					dump($status);
+					//dump($status);
+					echo "<img src='".asset('email_attachments/'.$attachment->name)."' />";
                 }
-				// $aAttachment = $message->getAttachments();
-				// $aAttachment->each(function ($oAttachment) {
-				// 	$oAttachment->save($path = public_path () . "/email_attachments/", $filename = null);
-				// });
 		}
 			//Move the current Message to 'INBOX.read'
 			// if($message->move('INBOX.read') == true){

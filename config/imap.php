@@ -71,8 +71,8 @@ return [
             'encryption'    => env('IMAP_ENCRYPTION', 'ssl'), // Supported: false, 'ssl', 'tls', 'notls', 'starttls'
             // 'validate_cert' => env('IMAP_VALIDATE_CERT', false),
             'validate_cert' => false,
-            'username' => env('IMAP_USERNAME', 'ord0077@gmail.com'),
-            'password' => env('IMAP_PASSWORD', 'orange!@#'),
+            'username' => env('IMAP_USERNAME', 'developeraizaz@gmail.com'),
+            'password' => env('IMAP_PASSWORD', 'developeraizaz@123'),
             'authentication' => env('IMAP_AUTHENTICATION', null),
             'proxy' => [
                 'socket' => null,
